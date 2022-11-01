@@ -1,118 +1,129 @@
 .profile {
-    width: 100vw;
-    height: 100vw;
-    overflow-x: hidden;
+  width: 100vw;
+  height: 100vw;
+  overflow-x: hidden;
 }
 
 .profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-    width: 90%;
-    padding: 8% 5% 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  width: 90%;
+  padding: 8% 5% 0 5%;
 }
 
 .profile-header h1 {
-    color: var(--color-text);
-    margin-bottom: 50px;
+  color: var(--color-text);
+  margin-bottom: 50px;
 }
 
 .avatar {
-    font-size: 8rem;
-    color: var(--color-text);
+  font-size: 8rem;
+  color: var(--color-text);
 }
 
 /* Notifiktationer */
 
 .notifikation-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 90%;
-    padding: 8% 5% 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 90%;
+  padding: 8% 5% 0 5%;
 }
 .notifikation-container h1 {
-    margin-bottom: 10px;
-    justify-self: flex-start;
+  margin-bottom: 10px;
+  justify-self: flex-start;
 }
 
 .notif-picker {
-    display: flex;
-    justify-content: center;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 5px;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .notif-picker > p {
-    padding: 5px;
+  padding: 5px;
 }
 
 .selected {
-    box-shadow: rgba(217, 206, 0, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(217, 206, 0, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .theme-show-box {
-    background-color: var(--color-bg);
-    width: 90%;
-    height: 200px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid grey;
+  background-color: var(--color-bg);
+  width: 90%;
+  height: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+
+.theme-box {
+  background-color: var(--color-bg);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  font-size: 1.2em;
+  margin-top: 2em;
+  padding: 1rem;
 }
 
 .profile-header > img {
-    position: absolute;
-    top: 70px;
+  position: absolute;
+  top: 70px;
 }
 
 .wave {
-    position: absolute;
-    width: 100vw;
-    height: auto;
-    top: 0;
-    z-index: -1;
-    padding: 0;
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  top: 0;
+  z-index: -1;
+  padding: 0;
 }
 
 .wavetwo {
-    position: absolute;
-    width: 100vw;
-    height: auto;
-    top: 0;
-    z-index: -1;
-    padding: 0;
-    max-width: 500px;
-    margin: 0 auto;
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  top: 0;
+  z-index: -1;
+  padding: 0;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .Signin {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
 .logout-btn {
-    margin-top: 0.5em;
-    background-color: #a0a0a0;
-    color: white;
-    border: none;
-    border-radius: 25%;
-    border-radius: 0.375rem;
-    padding: 0.5em 0.8em 0.5em 0.8em;
+  margin-top: 0.5em;
+  background-color: #a0a0a0;
+  color: white;
+  border: none;
+  border-radius: 25%;
+  border-radius: 0.375rem;
+  padding: 0.5em 0.8em 0.5em 0.8em;
 }
 
 @media only screen and (min-width: 1000px) {
-    .wave {
-        top: -50px;
-    }
+  .wave {
+    top: -50px;
+  }
 }
 
 @media only screen and (min-width: 1300px) {
-    .wave {
-        top: -90px;
-    }
+  .wave {
+    top: -90px;
+  }
 }
-

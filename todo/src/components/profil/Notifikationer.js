@@ -1,45 +1,44 @@
-import React from 'react'
+import React from "react";
+import "./profile.css";
 
-const notifikationer = () => {
-  const handleNotifikationChange = () => {
-    const notifikationer = ["sod", "fair", "aggressiv", "truende"];
-    const int = Math.floor(Math.random() * 4);
-    return notifikationer[int]
-    
+// Get a hook function
+const { useState } = React;
 
-  }
+const Notifikationer = () => {
+  const [displayedText, setDisplayedText] = useState("");
 
-  const handleClick = () => {
-    console.log("trykket")
-     }
-
-   const handleClick2 = (notifikationer) => {
-    console.log(`${notifikationer} var trykket`)
-     }
-
-      //const [erVist, setErVist] = useState(false);
-  
-
+  const sodText = () =>
+    setDisplayedText(
+      "Øv! Kun 1 ud af 3 færdig gjort i dag. Men en er jo langt bedre end ingen!"
+    );
+  const fairText = () =>
+    setDisplayedText(
+      "Du nåede kun 1 ud af tre ToDos i dag. Det kan vi gøre bedre i morgen!"
+    );
+  const aggressivText = () =>
+    setDisplayedText("Tag dig nu sammen dit dovne læs lort!");
+  const truendeText = () =>
+    setDisplayedText(
+      "Du har ikke nået dine ToDo's i dag... Husk jeg ved hvor du bor."
+    );
   return (
+    <div className="notifikation-container">
+      <h3>Notifikationer</h3>
 
-    
-    <div className='notifikation-container'>
-        <h3>Notifikationer</h3>
-       
-        <div className='notif-picker'>
-            <p className='selected' onClick={handleClick}
-            >Sød😘</p>
-            <p onClick={() =>{handleClick2("fair")}}>Fair🕊</p>
-            <p>Aggressiv😈</p>
-            <p>Truende🤬</p> 
-        </div>
-        <div className='theme-show-box'>
- <p>
-         {handleNotifikationChange()}
+      <div className="notif-picker">
+        <p className="Selected" onClick={sodText}>
+          Sød😘
         </p>
+        <p onClick={fairText}>Fair🕊</p>
+        <p onClick={aggressivText}> Aggressiv😈</p>
+        <p onClick={truendeText}>Truende🤬</p>
+      </div>
+      <div className="theme-show-box">
+        <div className="theme-box" id="themebox">
+          {displayedText}
         </div>
+      </div>
     </div>
-  )
-}
-
-export default notifikationer
+  );
+};
+export default Notifikationer;
