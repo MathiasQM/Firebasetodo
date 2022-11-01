@@ -1,0 +1,60 @@
+header {
+    width: 100vw;
+    height: 80px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-size: cover;
+    overflow-y: auto;
+    max-width: 500px;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.add-profile {
+    width: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-link {
+    font-family: 'Lato';
+    font-size: 25px;
+    right: 0%;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > img {
+    position: absolute;
+    top: 70px;
+}
+
+.wave {
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    top: 0;
+    z-index: -1;
+    max-width: 500px;
+}
+
+.bottom-wave {
+    width: 100vw;
+    height: auto;
+    z-index: 100;
+    bottom: 0;
+
+    
+}
+
