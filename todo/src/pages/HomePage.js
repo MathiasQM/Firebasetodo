@@ -1,18 +1,21 @@
+// react imports
 import React from "react";
+import {useEffect, useState} from "react"
+// Components
 import MineLister from "../components/HomePage/MineLister.js";
 import Noter from "../components/Noter/Noter";
 import AddNote from "../components/Noter/AddNote";
-import Liste from "../components/HomePage/liste/Liste.js";
+// Svg
 import wave from "../components/Nav/navwave2.svg";
-import {useEffect, useState} from "react"
+// firebase imports
 import { db } from '../firebaseConfig';
-import { collection, addDoc, setDoc, query, onSnapshot, doc  } from 'firebase/firestore';
+import { collection, setDoc, query, onSnapshot, doc  } from 'firebase/firestore';
 import './homepage.css'
 
 
 const HomePage = () => {
 
- 
+  // Blev ikke færdig
 
   const [valgtListe, setValgtListe] = useState('')
 
@@ -43,7 +46,6 @@ const HomePage = () => {
       // prevent page refresh
       e.preventDefault();
       if (title !== "") {
-        //         await setDoc(doc(db, "minliste", "la"), {
           setDoc(doc(db, title, 'tom'), {
             title: "",
             completed: false,
@@ -57,6 +59,7 @@ const HomePage = () => {
 
   return (
     <div className="container">
+      {/* Vi sender alle vores probs videre til de forskellige Componenter */}
       <MineLister title={title} setTitle={setTitle} valgtListe={valgtListe} setValgtListe={setValgtListe} getLists={getLists} key={getLists.id} setGetLists={setGetLists} handleSubmit={handleSubmit}/>
 
       <section className="row">

@@ -1,11 +1,13 @@
+// react imports
 import React from "react";
+// firebase imports
 import { deleteDoc, doc } from "firebase/firestore";
-import { toast } from "react-toastify";
 import { db } from "../../firebaseConfig";
+import { toast } from "react-toastify";
 import "./noter.css";
 
 export default function DeleteNote({ id }) {
-  
+  // sletter en todo fra minliste ud fra dets id
   const handleDelete = async () => {
     try {
       await deleteDoc(doc(db, "minliste", id));

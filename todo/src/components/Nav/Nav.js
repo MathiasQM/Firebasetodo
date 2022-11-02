@@ -1,18 +1,21 @@
+// React imports
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import {useState} from 'react'
+// Assets & Styling
 import { AiOutlineUsergroupAdd } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import { IoIosArrowBack } from 'react-icons/io';
 import "./nav.css";
 import img1 from "./navwave1.svg"
-import img2 from "./navwave2.svg"
+// firebase
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebaseConfig";
 
 const Nav = () => {
-  
-    const [isShown, setIsShown] = useState(false);
+// Skjuler profil ikonet på profilsiden
+const [isShown, setIsShown] = useState(false);
+// Firebase Hooks Authenticates User
 const [user] = useAuthState(auth); 
 
     const handleClick = () => {
@@ -26,6 +29,7 @@ const [user] = useAuthState(auth);
     <header>
       <img className="wave" src={img1} alt=""/>
         <nav>
+          {/* Giver en hilsen besked, afhængig af klokken */}
             <h2 style={{display: !isShown ? 'block' : 'none'}}>{hours < 12 ? "Good Morning" : hours >= 12 && hours <=17 ? "Good Afternoon" : "Good Evening"}, {user && <div>{user.displayName}</div>}</h2>
             <NavLink to="/" className="nav-link" onClick={handleClick} style={{visibility: isShown ? 'visible' : 'hidden', left: isShown ? '2%' : ''}}>
                    <IoIosArrowBack /> Home

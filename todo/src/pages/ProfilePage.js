@@ -1,11 +1,13 @@
+// react imports
 import React from 'react'
+// components
 import Profile from '../components/profil/Profile'
-import '../components/profil/profile.css'
 import Notifikationer from '../components/profil/Notifikationer'
 import Theme from '../components/profil/Theme'
 import Register from '../components/profil/Register'
+// svg & css
 import wave from "../components/Nav/navwave2.svg"
-
+import '../components/profil/profile.css'
 
 const ProfilePage = () => {
   return (

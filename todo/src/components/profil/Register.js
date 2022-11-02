@@ -1,21 +1,23 @@
+// Import React
 import React from "react";
+// Styling & Assets
 import { NavLink } from "react-router-dom";
+// Firebase Imports
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
-import { useState } from "react";
 import "./profile.css";
 
 
 const Register = () => {
   
-  const [erVist, setErVist] = useState(false);
 
   return (
+    
     <div className="Signin">
-      <NavLink className="nav-link" to="/Signup" onClick= {() => setErVist}>
+      <NavLink className="nav-link" to="/Signup">
         <button className="register-btn">Opret profil</button>
       </NavLink>
-
+      {/* Logger dig ud af din profil */}
       <button
         className="logout-btn"
         onClick={() => {

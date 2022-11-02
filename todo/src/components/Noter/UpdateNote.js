@@ -1,16 +1,19 @@
+// react imports
 import React from 'react';
 import { useState } from "react"
+// firebase imports
 import { db } from "../../firebaseConfig";
 import { doc, setDoc  } from "firebase/firestore";
 
 const UpdateNote = ({id}) => {
+  // Her sætter vi useState til en tom string
+  // dette gør vi da vi gerne vil gemme burgerens input her
     const [opdaterTodo, setOpdaterTodo] = useState("")
 
     const handleSubmit = async (e) => {
       // prevent page refresh
       e.preventDefault();
       if (opdaterTodo !== "") {
-        //         await setDoc(doc(db, "minliste", "la"), {
           setDoc(doc(db, "minliste", id), {
             title: "",
             todoId: opdaterTodo,
@@ -19,7 +22,6 @@ const UpdateNote = ({id}) => {
           }); 
           setOpdaterTodo("");
       }
-  
       console.log('form submitted ✅');
   };
   return (

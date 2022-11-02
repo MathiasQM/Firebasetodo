@@ -1,15 +1,17 @@
+// react import
 import React from 'react';
 import './reset.css'
 import './universal.css';
+// router-dom import
 import {Routes,
         Route,
         Navigate
         } from 'react-router-dom';
+// henter pages til nav
 import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import Nav from "./components/Nav/Nav";
 import SignUpPage from './pages/SignUpPage';
-
 
 
 function App() {

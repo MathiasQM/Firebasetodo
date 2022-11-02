@@ -1,14 +1,16 @@
+// React imports
 import React from "react";
 import { useState } from "react";
-import { Timestamp, collection, addDoc, getFirestore, doc, setDoc } from "firebase/firestore";
+// Firebase imports
+import { Timestamp, doc, setDoc } from "firebase/firestore";
 import { uploadBytesResumable, getDownloadURL, ref } from "firebase/storage";
 import { storage, db } from "../../firebaseConfig";
 import { toast } from "react-toastify";
 
 import "./noter.css";
 
-export default function Noter({title, setTitle, key, valgtListe, }) {
-
+export default function Noter({title, setTitle, key, valgtListe }) {
+  // Laver strukturen af vores firebase documenter
   const [formData, setFormData] = useState({
     Titel: "",
     Beskrivelse: "",
@@ -16,7 +18,8 @@ export default function Noter({title, setTitle, key, valgtListe, }) {
     oprettet: Timestamp.now().toDate(),
   });
 
-
+// Koden herunder fra linje 21 til 65 er taget fra:
+// https://www.youtube.com/watch?v=_7gdsAfFV9o
   const [progress, setProgress] = useState(0);
 
   const handleChange = (e) => {
@@ -59,11 +62,10 @@ export default function Noter({title, setTitle, key, valgtListe, }) {
         
 
         // Add's todo to list
-        const noterRef = doc(db, "minliste", "Rengøring" );
-        const minListeRef = collection(db, "minliste");
-        const listeId = String(key);
 
         getDownloadURL(uploadImage.snapshot.ref).then((url) => {
+          // Her tilføjer vi et Firestore document med
+          // det data og giver den et id, der matcher Beskrivelsen
           setDoc(doc(db, "minliste",  formData.Beskrivelse), {
             title: "",
             todoId: formData.Beskrivelse,
@@ -94,15 +96,13 @@ export default function Noter({title, setTitle, key, valgtListe, }) {
         placeholder="Hvad vil du gerne have gjort?"
         onChange={(e) => handleChange(e)}
       />
-
       <div className="pick-day">
-      <div className="addbutton" >
-        <button className="btn-primary" onClick={handlePublish}>
-          Tilføj
-        </button>
+        <div className="addbutton" >
+          <button className="btn-primary" onClick={handlePublish}>
+            Tilføj
+          </button>
+        </div>
       </div>
-    </div>
-    
     </div>
   );
 }

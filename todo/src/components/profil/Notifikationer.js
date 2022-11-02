@@ -1,12 +1,14 @@
+// react imports
 import React from "react";
 import "./profile.css";
 
-// Get a hook function
+// Bruger hook "useState" fra React" 
 const { useState } = React;
 
 const Notifikationer = () => {
   const [displayedText, setDisplayedText] = useState("");
 
+//Bruger funktioner til at ændre i tilstanden ved "onClick"  
   const sodText = () =>
     setDisplayedText(
       "Øv! Kun 1 ud af 3 færdig gjort i dag. Men en er jo langt bedre end ingen!"
@@ -21,6 +23,7 @@ const Notifikationer = () => {
     setDisplayedText(
       "Du har ikke nået dine ToDo's i dag... Husk jeg ved hvor du bor."
     );
+
   return (
     <div className="notifikation-container">
       <h3>Notifikationer</h3>
@@ -35,6 +38,7 @@ const Notifikationer = () => {
       </div>
       <div className="theme-show-box">
         <div className="theme-box" id="themebox">
+          {/*Indstiller tilstenden med tekst*/}
           {displayedText}
         </div>
       </div>

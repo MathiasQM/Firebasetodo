@@ -1,5 +1,7 @@
+// Ract imports
 import React from 'react'
 import { useState } from "react";
+// Assets & Styling
 import './minelister.css';
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import { IoIosNotificationsOff } from 'react-icons/io';
@@ -10,10 +12,7 @@ import Liste from './liste/Liste'
 
 const MineLister = ({title, setTitle, getLists, handleSubmit, valgtListe, setValgtListe, key}) => {
 
-//    Get lists
-
-
-    
+    // Giver listen en ny class, som åbner tilføj nu liste
     const [active, setActive] = useState("list-menu");
     const listToggle = () => {
         active === "list-menu" 
@@ -37,7 +36,7 @@ const MineLister = ({title, setTitle, getLists, handleSubmit, valgtListe, setVal
                 onChange={(e) => setTitle(e.target.value)} />
                 <button className="add-button">Tilføj</button>
             </form>
-
+            {/* Indstillinger til listen */}
             <form>
                 <div >
                 <IoIosNotificationsOff className='bell-off'/>
@@ -45,6 +44,7 @@ const MineLister = ({title, setTitle, getLists, handleSubmit, valgtListe, setVal
                 </div>
                 <label className='colorpicker' for="colorpicker">Vælg farvetema</label>
                 <input type="color" id="colorpicker" value="#0000ff"></input>
+                {/* Henter lister fra firebase */}
                 {getLists.map(({key}) => (
                         <Liste 
                         valgtListe={valgtListe} 
